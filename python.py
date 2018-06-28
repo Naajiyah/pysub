@@ -13,3 +13,7 @@ def downloadSubtitle(subtitle, movie_directory, download_directory):
         z = zipfile.ZipFile(io.BytesIO(r.content))
         z.extractall(download_directory+movie_directory)
 
+def searchAndDownloadSubtitle(movie_name, download_directory, language='English'):
+    subtitles = searchSubtitles(movie_name, language)
+    if not subtitles is None:
+        downloadSubtitle(subtitles[0], movie_name, download_directory)
