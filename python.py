@@ -1,5 +1,10 @@
 import subscene, requests,zipfile,io
 
+parser = argparse.ArgumentParser('This is a program that downloads movie subtitles from subscene.com')
+parser.add_argument('-lang', dest='language', default=DEFAULT_LANGUAGE, help='The language of the subtitles to be downloaded. Default is ' + DEFAULT_LANGUAGE)
+parser.add_argument('-dir', dest='folder', default=DEFAULT_SCAN_FOLDER, help='Folder to be scanned for movies. Also the download folder. Default is ' + DEFAULT_SCAN_FOLDER)
+args = parser.parse_args()
+
 def searchSubtitles(title, language='ALL'):
     try:
         film = subscene.search(title)
