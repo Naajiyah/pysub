@@ -22,3 +22,7 @@ def searchAndDownloadSubtitle(movie_name, download_directory, language='English'
     subtitles = searchSubtitles(movie_name, language)
     if not subtitles is None:
         downloadSubtitle(subtitles[0], movie_name, download_directory)
+
+print("Downloads Started...")
+[searchAndDownloadSubtitle(movie_name, args.folder, args.language) for movie_name in os.listdir(args.folder)]
+print("...Downloads Finished")
