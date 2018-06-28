@@ -1,4 +1,7 @@
-import subscene, requests,zipfile,io
+import subscene, requests,zipfile,io, os, argparse, urllib
+
+DEFAULT_SCAN_FOLDER = str(Path.home()) + "\\downloads\\movies\\"
+DEFAULT_LANGUAGE = 'English'
 
 parser = argparse.ArgumentParser('This is a program that downloads movie subtitles from subscene.com')
 parser.add_argument('-lang', dest='language', default=DEFAULT_LANGUAGE, help='The language of the subtitles to be downloaded. Default is ' + DEFAULT_LANGUAGE)
